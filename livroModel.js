@@ -1,15 +1,15 @@
-const db = require('./db');
+const bd = require('./bd');
 
 function buscarLivroPorTitulo(titulo, callback) {
-  db.query('SELECT * FROM livros WHERE titulo LIKE ?', [`%${titulo}%`], callback);
+  bd.query('SELECT * FROM livros WHERE titulo LIKE ?', [`%${titulo}%`], callback);
 }
 
 function buscarLivroPorAno(ano, callback) {
-  db.query('SELECT * FROM livros WHERE ano = ?', [ano], callback);
+  bd.query('SELECT * FROM livros WHERE ano = ?', [ano], callback);
 }
 
 function mostrarTodos(callback) {
-  db.query('SELECT * FROM livros', callback);
+  bd.query('SELECT * FROM livros', callback);
 }
 
 module.exports = {
