@@ -18,15 +18,16 @@
       <button type="submit" style="display: none;">Buscar por título</button>
     </form>
     
-    <form action="/buscarPorAno" method="GET">
+    <form action="/ano/<%= ano %>" method="GET">
       <div>
         <label for="ano">Ano:</label>
         <input type="number" id="ano" name="ano">
-        <input type="radio" name="tipoBusca" value="ano" checked>
+        <input type="radio" name="tipoBusca" value="ano" checked style="display: none;">
         <label for="tipoBuscaAno">Buscar por ano</label>
       </div>
       <button type="submit" style="display: none;">Buscar por ano</button>
     </form>
+
     
     <form action="/mostrar-todos" method="GET" style="display: inline-block;">
       <button type="submit">Mostrar todos os livros</button>
