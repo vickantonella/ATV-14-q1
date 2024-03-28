@@ -12,7 +12,7 @@ app.use(express.static('public'));
 // Rotas
 app.get('/', controller.indexPage);
 app.get('/buscarPorTitulo', controller.buscarLivroPorTitulo);
-app.get('/buscarPorAno/:ano', controller.buscarLivroPorAno);
+app.get('/ano/:ano', controller.buscarLivroPorAno);
 app.get('/mostrar-todos', controller.mostrarTodosLivros);
 
 // Iniciar o servidor
