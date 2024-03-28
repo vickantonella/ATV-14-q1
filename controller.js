@@ -28,6 +28,9 @@ function buscarLivroPorAno(req, res) {
       console.error('Erro ao buscar livro por ano:', err);
       return res.render('index', { resultado: [], error: 'Erro ao buscar livro por ano.' });
     }
+    if (resultado.length === 0) {
+      return res.render('index', { resultado: [], error: `Nenhum livro encontrado para o ano ${ano}.` });
+    }
     return res.render('index', { resultado });
   });
 }
