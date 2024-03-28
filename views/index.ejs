@@ -8,31 +8,29 @@
 </head>
 <body>
     <h1>BIBLIOTECA ONLINE</h1>
-    <form action="/buscarPorTitulo" method="GET">
+    <form action="/buscar" method="GET">
       <div>
         <label for="titulo">Título:</label>
         <input type="text" id="titulo" name="titulo">
-        <input type="radio" name="tipoBusca" value="titulo" checked>
+        <input type="radio" id="tipoBuscaTitulo" name="tipoBusca" value="titulo">
         <label for="tipoBuscaTitulo">Buscar por título</label>
       </div>
-      <button type="submit" style="display: none;">Buscar por título</button>
-    </form>
-    
-    <form action="/ano/<%= ano %>" method="GET">
       <div>
         <label for="ano">Ano:</label>
         <input type="number" id="ano" name="ano">
+        <input type="radio" id="tipoBuscaAno" name="tipoBusca" value="ano">
+        <label for="tipoBuscaAno">Buscar por ano</label>
       </div>
-      <button type="submit">Buscar por ano</button>
+      <button type="submit">Buscar</button>
     </form>
-
+    
     <form action="/mostrar-todos" method="GET" style="display: inline-block;">
       <button type="submit">Mostrar todos os livros</button>
     </form>
     
     <div class="resultado">
       <% if (resultado && resultado.length > 0) { %>
-        <h2>Resultados da busca:</h2>
+        <h2>Resultado da busca:</h2>
         <table>
           <thead>
             <tr>
