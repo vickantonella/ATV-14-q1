@@ -14,7 +14,7 @@ function buscarLivro(req, res) {
         console.error('Erro ao buscar livro por título:', err);
         return res.render('index', { resultado: [], error: 'Erro ao buscar livro por título.' });
       }
-      return res.render('index', { resultado });
+      return res.render('index', { resultado, error: null });
     });
   } else if (tipoBusca === 'ano' && ano) {
     livroModel.buscarLivroPorAno(ano, (err, resultado) => {
@@ -22,7 +22,7 @@ function buscarLivro(req, res) {
         console.error('Erro ao buscar livro por ano:', err);
         return res.render('index', { resultado: [], error: 'Erro ao buscar livro por ano.' });
       }
-      return res.render('index', { resultado });
+      return res.render('index', { resultado, error: null });
     });
   } else {
     // Se o tipo de busca foi selecionado, mas o campo correspondente está vazio
@@ -36,7 +36,7 @@ function mostrarTodosLivros(req, res) {
       console.error('Erro ao buscar todos os livros:', err);
       return res.render('index', { resultado: [], error: 'Erro ao buscar todos os livros.' });
     }
-    res.render('index', { resultado });
+    res.render('index', { resultado, error: null });
   });
 }
 
