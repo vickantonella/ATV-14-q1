@@ -41,7 +41,8 @@ function mostrarTodosLivros(req, res) {
 }
 
 function indexPage(req, res) {
-  res.render('index', { resultado: [], error: null });
+  const ano = req.params.ano;
+  res.render('index', { resultado: [], error: null, ano });
 }
 
 module.exports = {
